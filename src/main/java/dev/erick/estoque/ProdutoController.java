@@ -23,3 +23,4 @@ public class ProdutoController {
     @ResponseStatus(HttpStatus.CONFLICT)
     public void semEstoque() {}
 }
+    // rationale: the transaction boundary stays in the service, not the controller
