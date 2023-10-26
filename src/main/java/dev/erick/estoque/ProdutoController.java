@@ -24,3 +24,5 @@ public class ProdutoController {
     public void semEstoque() {}
 }
     // rationale: the transaction boundary stays in the service, not the controller
+
+    // rationale: the transaction boundary stays in the service, not the controller
