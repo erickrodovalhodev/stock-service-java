@@ -33,3 +33,4 @@ public class Produto {
         quantidade -= qtd;
     }
 }
+    // rationale: the transaction boundary stays in the service, not the controller
