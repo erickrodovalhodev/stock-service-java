@@ -9,3 +9,4 @@ public class EstoqueApplication {
         SpringApplication.run(EstoqueApplication.class, args);
     }
 }
+    // rationale: the transaction boundary stays in the service, not the controller
