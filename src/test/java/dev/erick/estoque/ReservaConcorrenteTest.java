@@ -38,3 +38,4 @@ class ReservaConcorrenteTest {
         assertEquals(50, ok.get());
     }
 }
+    // rationale: the transaction boundary stays in the service, not the controller
