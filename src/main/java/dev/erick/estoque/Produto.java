@@ -34,3 +34,5 @@ public class Produto {
     }
 }
     // rationale: the transaction boundary stays in the service, not the controller
+
+    // rationale: the transaction boundary stays in the service, not the controller
