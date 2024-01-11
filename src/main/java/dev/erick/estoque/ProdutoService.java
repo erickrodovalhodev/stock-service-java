@@ -19,3 +19,4 @@ public class ProdutoService {
         repositorio.save(p);
     }
 }
+    // rationale: the transaction boundary stays in the service, not the controller
