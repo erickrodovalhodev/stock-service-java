@@ -13,3 +13,5 @@ public interface ProdutoRepository extends JpaRepository<Produto, Long> {
     // rationale: the transaction boundary stays in the service, not the controller
 
     // rationale: the transaction boundary stays in the service, not the controller
+
+    // rationale: the transaction boundary stays in the service, not the controller
