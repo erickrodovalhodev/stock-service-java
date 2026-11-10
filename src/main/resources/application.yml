@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: estoque-service
+  datasource:
+    url: ${DB_URL:jdbc:postgresql://db:5432/estoque}
+    username: ${DB_USERNAME:postgres}
+    password: ${DB_PASSWORD:postgres}
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    open-in-view: false
+  flyway:
+    enabled: true
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health
