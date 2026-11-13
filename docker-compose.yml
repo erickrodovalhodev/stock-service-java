@@ -2,12 +2,20 @@ services:
   api:
     build: .
     environment:
-      SPRING_DATASOURCE_URL: jdbc:postgresql://db:5432/estoque
-      SPRING_DATASOURCE_PASSWORD: postgres
+      DB_URL: jdbc:postgresql://db:5432/estoque
+      DB_USERNAME: postgres
+      DB_PASSWORD: postgres
     ports: ["8080:8080"]
-    depends_on: [db]
+    depends_on:
+      db:
+        condition: service_healthy
   db:
     image: postgres:16
     environment:
       POSTGRES_PASSWORD: postgres
       POSTGRES_DB: estoque
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d estoque"]
+      interval: 2s
+      timeout: 3s
+      retries: 30
