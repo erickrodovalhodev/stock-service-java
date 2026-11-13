@@ -17,7 +17,10 @@ class ReservaConcorrenteTest {
 
     @Test
     void fiftyThreadsOneSku() throws Exception {
-        Produto p = repositorio.save(new Produto("SKU-CONC", 50));
+        // SKU-CONC/50 vem do seed da V1; cria só se a migration não o trouxe.
+        Produto p = repositorio.findBySku("SKU-CONC")
+                .orElseGet(() -> repositorio.save(new Produto("SKU-CONC", 50)));
+        assertEquals(50, p.getQuantidade());
         ExecutorService pool = Executors.newFixedThreadPool(50);
         AtomicInteger ok = new AtomicInteger();
         CountDownLatch largada = new CountDownLatch(1);
