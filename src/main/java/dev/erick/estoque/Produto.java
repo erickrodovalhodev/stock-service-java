@@ -26,6 +26,7 @@ public class Produto {
     }
 
     public Long getId() { return id; }
+    public String getSku() { return sku; }
     public int getQuantidade() { return quantidade; }
 
     public void reservar(int qtd) {
